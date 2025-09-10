@@ -29,15 +29,11 @@ jobs:
 
     - name: Build Docker Image
       run: |
-        echo "Ejecutando el Build"
         docker build -t hugondd/docker-graphql:0.0.2 .
-        echo "Fin Ejecutando el Build"
 
     - name: Push Docker Image
       run: |
-        echo "Inicia Ejecucion Push"
         docker push hugondd/docker-graphql:0.0.2 .
-        echo "Fin Ejecucion Push"
         
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
